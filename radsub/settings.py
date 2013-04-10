@@ -1,36 +1,21 @@
+# Include Classs
+
 # Django settings for radsub project.
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+    ('Your Name', 'lgsilver@gmail.com'),
 )
 
 MANAGERS = ADMINS
 
+# These are the heroku settings
 import dj_database_url
 DATABASES = {
 	'default': dj_database_url.config()
 }
-
-STATIC_URL = 'http://lindsay-gs.s3-website-us-east-1.amazonaws.com/'
-
-# # Change Static Files and Media to S3
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-#         'NAME': 'radsub.db',                      # Or path to database file if using sqlite3.
-#         # The following settings are not used with sqlite3:
-#         'USER': '',
-#         'PASSWORD': '',
-#         'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
-#         'PORT': '',                      # Set to empty string for default.
-#     }
-# }
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
@@ -40,9 +25,51 @@ AWS_SECRET_ACCESS_KEY = 'aeNeI2Y62XL2PdG7ATJZCcEbXcH5MLvW7bYXPSAv'
 AWS_STORAGE_BUCKET_NAME = 'lindsay-gs'
 AWS_QUERYSTRING_AUTH = False
 
-# Hosts/domain names that are valid for this site; required if DEBUG is False
-# See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = []
+# Absolute filesystem path to the directory that will hold user-uploaded files.
+# Example: "/home/media/media.lawrence.com/media/"
+MEDIA_ROOT = ''
+
+# URL that handles the media served from MEDIA_ROOT. Make sure to use a
+# trailing slash.
+# Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
+MEDIA_URL = 'http://lindsay-gs.s3-website-us-east-1.amazonaws.com/uploads/'
+
+# Absolute path to the directory static files should be collected to.
+# Don't put anything in this directory yourself; store your static files
+# in apps' "static/" subdirectories and in STATICFILES_DIRS.
+# Example: "/home/media/media.lawrence.com/static/"
+STATIC_ROOT = ''
+
+# URL prefix for static files.
+# Example: "http://media.lawrence.com/static/"
+STATIC_URL = 'http://lindsay-gs.s3-website-us-east-1.amazonaws.com/'
+
+ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
+
+
+# Change Static Files and Media to S3
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+
+
+# These are the development settings
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+#         'NAME': 'nacrus.db',                      # Or path to database file if using sqlite3.
+#         'USER': '',                      # Not used with sqlite3.
+#         'PASSWORD': '',                  # Not used with sqlite3.
+#         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+#         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+#     }
+# }
+# 
+# 
+# MEDIA_ROOT = ''
+# MEDIA_URL = ''
+# STATIC_ROOT = ''
+# STATIC_URL = 'http://localhost/personal/radsub/'
+
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -67,30 +94,12 @@ USE_L10N = True
 # If you set this to False, Django will not use timezone-aware datetimes.
 USE_TZ = True
 
-# Absolute filesystem path to the directory that will hold user-uploaded files.
-# Example: "/var/www/example.com/media/"
-MEDIA_ROOT = ''
-
-# URL that handles the media served from MEDIA_ROOT. Make sure to use a
-# trailing slash.
-# Examples: "http://example.com/media/", "http://media.example.com/"
-MEDIA_URL = ''
-
-# Absolute path to the directory static files should be collected to.
-# Don't put anything in this directory yourself; store your static files
-# in apps' "static/" subdirectories and in STATICFILES_DIRS.
-# Example: "/var/www/example.com/static/"
-STATIC_ROOT = ''
-
-# URL prefix for static files.
-# Example: "http://example.com/static/", "http://static.example.com/"
-ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
-
 # Additional locations of static files
 STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    
 )
 
 # List of finder classes that know how to find static files in
@@ -98,17 +107,24 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = 'zu5*vu=^^r8xlhnu^o2ea2tnw&fznf355gph6_o$#d7=dz3kxi'
+SECRET_KEY = 'hy$hy_&amp;am3c^pa)w(li1m!wf$=%i6w&amp;o=8bz3%j+n!vnk(t6_h'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
-    'django.template.loaders.filesystem.Loader',
-    'django.template.loaders.app_directories.Loader',
-#     'django.template.loaders.eggs.Loader',
+	'django.template.loaders.filesystem.Loader',
+	'django.template.loaders.app_directories.Loader',
+	'django.template.loaders.eggs.Loader'
+)
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.core.context_processors.request',
+    'django.contrib.messages.context_processors.messages',
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.static'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -116,7 +132,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware'
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
@@ -130,6 +146,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    'templates'
 )
 
 INSTALLED_APPS = (
@@ -139,9 +156,11 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'suit',
     'django.contrib.admin',
     'django.contrib.admindocs',
-    'posts'
+    'django.contrib.humanize',
+    'posts',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -172,3 +191,6 @@ LOGGING = {
         },
     }
 }
+
+# Import the dev settings for local services
+# import settings.local
