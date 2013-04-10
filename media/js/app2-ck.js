@@ -1,0 +1,1 @@
+$(document).ready(function(){var e=impress();e.init();$(document).on("impress:stepenter",function(e){var t=$(e.target).attr("id");t==="home"?$("#home-tab").fadeOut():$("#home-tab").fadeIn()});$(".next-slide").on("click",function(){e.next()});$(".prev-slide").on("click",function(){e.prev()})});

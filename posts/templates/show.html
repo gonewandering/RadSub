@@ -1,0 +1,105 @@
+{% load staticfiles %}
+{% load post_extras %}
+<!doctype html>
+<html>
+	<head>
+		<title>Blog Title</title>
+		<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+		<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+		<link href="//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
+		<link type="text/css" rel="stylesheet" href="http://localhost/personal/radsubapp/radsub/media/css/app2.css" />
+	</head>
+	<body>
+		<div id="home-tab">
+			<a class="prev-slide" href="#">
+				<i class="icon-chevron-left"></i>
+			</a> 
+			<a href="#home">
+				<i class="icon-list"></i>
+			</a> 
+			<a class="next-slide" href="#">
+				<i class="icon-chevron-right"></i>
+			</a>
+		</div>
+		<div id="impress">
+			{% if debug %}
+			<div id="#debug" class="slide step debug" data-x="0" data-y="0" data-scale="7" data-rotate="180">
+			</div> 
+			{% endif %}
+			<div id="home" class="step slide {{ debug }}" data-x="0" data-y="0" data-scale="2" data-rotate="180">
+				<div class="row-fluid">
+					<div class="span12">
+						<div class="row-fluid">
+							<div class="span12">
+								<h1><span class="grey">Lindsay.gs</span></h1>
+							</div>
+						</div>
+						<div class="row-fluid">
+							<div class="span6">
+								<ul class="post-menu">
+							    {% if posts %}
+						            {% for post in posts %}
+										<li>
+											<div class="row-fluid">
+												<div class="span12">
+													<div><a href="#{{ post.slug }}">{{ post.title }}</a></div>
+													<p class="excerpt">{{ post.excerpt }}</p>
+												</div>
+											</div>
+										</li>
+								 	    {% if forloop.counter|divisibleby:4 %}
+						            		</ul></div>
+						            		<div class="span6"><ul class="post-menu">
+						            	{% endif %}
+						            {% endfor %}
+					            {% endif %}	
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+		    </div>	
+			{% if posts %}
+				{% for post in posts %}
+					<div id="{{ post.slug }}" class="step slide {{ debug }}" {% if post.mod_set.all %}{% for attr in post.mod_set.all %} data-{{ attr.attribute }}="{{ attr.value }}"{% endfor %}{% endif %}>
+						{% if debug %}<h1 class='debug-slug'>{{ post.slug }}</h1>{% endif %}
+						{% if post.template = "top" %}
+							<div>
+								<h1>{{ post.title }}</h1>
+								{{ post.content|safe }}
+							</div>
+							<div>{{ post.addon|safe }}</div>
+						{% elif post.template = "left" %}
+							<div class="row-fluid">
+								<div class="span{{ post.contentWidth }}">
+									<h1>{{ post.title }}</h1>
+									{{ post.content|safe }}
+								</div>
+								<div class="span{{ post.contentWidth|diff:12 }}">{{ post.addon|safe }}</div>
+							</div>
+						{% elif post.template = "bottom" %}
+							<div>
+								{{ post.addon|safe }}
+							</div>
+							<div>
+								<h1>{{ post.title }}</h1>
+								{{ post.content|safe }}</div>
+						{% elif post.template = "right" %}
+							<div class="row-fluid">
+								<div class="span{{ post.contentWidth|diff:12 }}">{{ post.addon|safe }}</div>
+								<div class="span{{ post.contentWidth }}">
+									<h1>{{ post.title }}</h1>
+									{{ post.content|safe }}
+								</div>
+							</div>
+						{% endif %}
+					</div>
+				{% endfor %}
+			{% endif %}
+		</div>
+
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script src="http://localhost/personal/radsubapp/radsub/media/js/impress.js"></script>
+		<script type="text/javascript" src="http://localhost/personal/radsubapp/radsub/media/js/app2.js"></script>
+	</body>
+</html>
