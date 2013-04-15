@@ -1,1 +1,0 @@
-$(document).ready(function(){var e=$(document).height()+1;$(window).scroll(function(){var t=$(this).scrollTop()/e;console.log(col*t)})});

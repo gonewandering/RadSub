@@ -4,17 +4,19 @@
 <html>
 	<head>
 		<title>Blog Title</title>
-		<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
 		<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
 		<link href="//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
-		<link type="text/css" rel="stylesheet" href="{% static "media/css/app2.css" %}" />
+		<link type="text/css" rel="stylesheet" href="{% static "media/css/app.min.css" %}" />
 	</head>
 	<body>
 		<div id="home-tab">
 			<a class="prev-slide" href="#">
 				<i class="icon-chevron-left"></i>
 			</a> 
-			<a href="#home">
+			<a class="home" href="#home">
+				<i class="icon-home"></i>
+			</a>
+			<a class="popup-menu" href="#">
 				<i class="icon-list"></i>
 			</a> 
 			<a class="next-slide" href="#">
@@ -61,7 +63,7 @@
 		    </div>	
 			{% if posts %}
 				{% for post in posts %}
-					<div id="{{ post.slug }}" class="step slide {{ debug }}" {% if post.mod_set.all %}{% for attr in post.mod_set.all %} data-{{ attr.attribute }}="{{ attr.value }}"{% endfor %}{% endif %}>
+					<div id="{{ post.slug }}" class="step slide {{ debug }} {{ post.slug }}" {% if post.mod_set.all %}{% for attr in post.mod_set.all %} data-{{ attr.attribute }}="{{ attr.value }}"{% endfor %}{% endif %}>
 						{% if debug %}<h1 class='debug-slug'>{{ post.slug }}</h1>{% endif %}
 						{% if post.template = "top" %}
 							<div>
@@ -96,10 +98,25 @@
 					</div>
 				{% endfor %}
 			{% endif %}
+		</div>		
+		
+		<div class="popup-content hider">
+		    {% if posts %}
+		    	<ul>
+	            {% for post in posts %}
+	            	<li>
+	            		<a class="title {{ post.slug }}" href="#{{ post.slug }}">{{ post.title }}</a>
+	            		<!-- <p>{{ post.excerpt }}</p> -->
+	            	</li>
+	            {% endfor %}
+		    	</ul>
+	        {% endif %}
 		</div>
-
+		
+		
 		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
 		<script src="{% static "media/js/impress.js" %}"></script>
-		<script type="text/javascript" src="{% static "media/js/app2.js" %}"></script>
+		<script type="text/javascript" src="{% static "media/js/app.min.js" %}"></script>
 	</body>
 </html>
