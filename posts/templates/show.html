@@ -103,6 +103,9 @@
 		<div class="popup-content hider">
 		    {% if posts %}
 		    	<ul>
+		    		<li>
+		    			<h3>POSTS</h3>
+		    		</li>
 	            {% for post in posts %}
 	            	<li>
 	            		<a class="title {{ post.slug }}" href="#{{ post.slug }}">{{ post.title }}</a>
