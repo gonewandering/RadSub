@@ -44,7 +44,7 @@
 										<li>
 											<div class="row-fluid">
 												<div class="span12">
-													<div><a href="#{{ post.slug }}">{{ post.title }}</a></div>
+													<div>{{ post.publishDate|date:"M. jS" }} :: <a href="#{{ post.slug }}">{{ post.title }}</a></div>
 													<p class="excerpt">{{ post.excerpt }}</p>
 												</div>
 											</div>
@@ -67,6 +67,7 @@
 						{% if debug %}<h1 class='debug-slug'>{{ post.slug }}</h1>{% endif %}
 						{% if post.template = "top" %}
 							<div>
+								<h3 class="date">{{ post.publishDate|date:"M. jS" }}</h3>
 								<h1>{{ post.title }}</h1>
 								{{ post.content|safe }}
 							</div>
@@ -74,6 +75,7 @@
 						{% elif post.template = "left" %}
 							<div class="row-fluid">
 								<div class="span{{ post.contentWidth }}">
+									<h3 class="date">{{ post.publishDate|date:"M. jS" }}</h3>
 									<h1>{{ post.title }}</h1>
 									{{ post.content|safe }}
 								</div>
@@ -84,12 +86,14 @@
 								{{ post.addon|safe }}
 							</div>
 							<div>
+								<h3 class="date">{{ post.publishDate|date:"M. jS" }}</h3>
 								<h1>{{ post.title }}</h1>
 								{{ post.content|safe }}</div>
 						{% elif post.template = "right" %}
 							<div class="row-fluid">
 								<div class="span{{ post.contentWidth|diff:12 }}">{{ post.addon|safe }}</div>
 								<div class="span{{ post.contentWidth }}">
+									<h3 class="date">{{ post.publishDate|date:"M. jS" }}</h3>
 									<h1>{{ post.title }}</h1>
 									{{ post.content|safe }}
 								</div>
@@ -108,7 +112,7 @@
 		    		</li>
 	            {% for post in posts %}
 	            	<li>
-	            		<a class="title {{ post.slug }}" href="#{{ post.slug }}">{{ post.title }}</a>
+	            		<a class="title {{ post.slug }}" href="#{{ post.slug }}"><span style="font-weight:300">{{ post.publishDate|date:"n/j" }}</span> : {{ post.title }}</a>
 	            		<!-- <p>{{ post.excerpt }}</p> -->
 	            	</li>
 	            {% endfor %}
