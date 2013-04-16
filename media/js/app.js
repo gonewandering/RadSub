@@ -39,7 +39,7 @@ $(document).ready(function() {
 
 	function popupSet(item) { 
 		var pos = $("#home-tab").position();
-		item.css({"top": pos.top - item.height(), "left": pos.left});
+		item.css({"top": pos.top - item.height()-30, "left": pos.left});
 		return true;
 	}
 	
