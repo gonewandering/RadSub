@@ -19,11 +19,6 @@
 			<a class="popup-menu" href="#">
 				<i class="icon-list"></i>
 			</a> 
-			{% if request.user.is_superuser %}
-			<a class="popup-menu" href="/admin">
-				<i class="icon-cog"></i>
-			</a> 
-			{% else %}
 			<a class="next-slide" href="#">
 				<i class="icon-chevron-right"></i>
 			</a>
@@ -69,6 +64,11 @@
 			{% if posts %}
 				{% for post in posts %}
 					<div id="{{ post.slug }}" class="step slide {{ debug }} {{ post.slug }}" {% if post.mod_set.all %}{% for attr in post.mod_set.all %} data-{{ attr.attribute }}="{{ attr.value }}"{% endfor %}{% endif %}>
+						{% if request.user.is_superuser %}
+							<a class="popup-menu" href="/admin/posts/post/{{ post.id }}/">
+								<i class="icon-cog"></i>
+							</a> 
+						{% else %}
 						{% if debug %}<h1 class='debug-slug'>{{ post.slug }}</h1>{% endif %}
 						{% if post.template = "top" %}
 							<div>
