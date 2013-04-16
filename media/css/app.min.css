@@ -7,7 +7,7 @@ p{opacity:.9;}
 #home-tab{position:fixed;padding:8px;font-size:24px;bottom:0;left:200px;border-top-left-radius:5px;border-top-right-radius:5px;text-shadow:0 2px 2px rgba(0, 0, 0, 0.3);z-index:5000;opacity:1;}
 #home-tab a{opacity:1;}
 h1,h2,h3,h4,h5,h6{margin-top:2em;opacity:.4;font-weight:400;font-size:40px;line-height:50px;}
-.slide h1{margin:0;font-weight:300;}
+.slide h1{margin:0;font-weight:300;margin-bottom:14px;}
 .slide h3.date{margin-top:2em;font-size:20px;font-weight:bold;line-height:20px;}
 .debug{border:solid 10px #CCC;}
 .debug .debug-slug{position:absolute;top:10px;left:10px;font-size:72px;margin:0 !important;padding:0 !important;color:yellow;}

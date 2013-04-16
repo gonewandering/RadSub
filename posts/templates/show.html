@@ -19,6 +19,11 @@
 			<a class="popup-menu" href="#">
 				<i class="icon-list"></i>
 			</a> 
+			{% if request.user.is_superuser %}
+			<a class="popup-menu" href="/admin">
+				<i class="icon-cog"></i>
+			</a> 
+			{% else %}
 			<a class="next-slide" href="#">
 				<i class="icon-chevron-right"></i>
 			</a>
