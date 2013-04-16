@@ -38,11 +38,11 @@ MEDIA_URL = 'http://lindsay-gs.s3-website-us-east-1.amazonaws.com/uploads/'
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = 'http://lindsay-gs.s3-website-us-east-1.amazonaws.com/media/'
+STATIC_ROOT = 'http://lindsay-gs.s3-website-us-east-1.amazonaws.com/'
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
-STATIC_URL = 'http://lindsay-gs.s3-website-us-east-1.amazonaws.com/media/'
+STATIC_URL = 'http://lindsay-gs.s3-website-us-east-1.amazonaws.com/'
 
 ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
 
