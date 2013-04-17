@@ -22,9 +22,10 @@ h1,h2,h3,h4,h5,h6{margin-top:2em;opacity:.4;font-weight:400;font-size:40px;line-
 .publish-date{color:white;font-weight:300;text-transform:uppercase;font-weight:bold;opacity:.6;}
 .publish-div{color:#006699;}
 .slide{width:1100px;height:720px;margin-top:50px;opacity:.7;-webkit-transition:opacity 2s ease;-moz-transition:opacity 2s ease;-o-transition:opacity 2s ease;-ms-transition:opacity 2s ease;}
+.slide h3{color:#666;}
 .slide.active{opacity:1;}
-.slide h1,.slide p,.slide a,.slide ul{opacity:0;-webkit-transition:opacity 2s ease;-moz-transition:opacity 2s ease;-o-transition:opacity 2s ease;-ms-transition:opacity 2s ease;}
-.slide.active h1,.slide.active p,.slide.active a,.slide.active ul{opacity:1;}
+.slide h1,.slide h3,.slide p,.slide a,.slide ul{opacity:0;-webkit-transition:opacity 2s ease;-moz-transition:opacity 2s ease;-o-transition:opacity 2s ease;-ms-transition:opacity 2s ease;}
+.slide.active h1,.slide.active h3,.slide.active p,.slide.active a,.slide.active ul{opacity:1;}
 .debug.slide h1,.debug.slide p,.debug.slide a,.debug.slide ul{opacity:1 !important;}
 iframe{border:none;outline:none;}
 .popup-content{position:absolute;width:300px;top:0;border-radius:10px;display:none;background:#111;border-width:8px;box-shadow:0 0 0 10px rgba(60, 60, 60, 0.5);}.popup-content ul{list-style-type:none;margin:0;padding:0;}.popup-content ul h3{font-size:16px;line-height:24px;margin:0;padding:4px 10px;border-bottom:solid 3px #333;opacity:1;text-shadow:0 1px 3px black;}

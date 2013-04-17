@@ -158,11 +158,15 @@ h1,h2,h3,h4,h5,h6 {
     -ms-transition: opacity 2s ease;
 }
 
+.slide h3 { 
+	color:#666;
+}
+
 .slide.active { 
 	opacity:1;
 }
 
-.slide h1, .slide p, .slide a, .slide ul { 
+.slide h1, .slide h3, .slide p, .slide a, .slide ul { 
 	opacity:0;
 	-webkit-transition: opacity 2s ease;  
     -moz-transition: opacity 2s ease;  
@@ -170,7 +174,7 @@ h1,h2,h3,h4,h5,h6 {
     -ms-transition: opacity 2s ease;
 }
 
-.slide.active h1, .slide.active p, .slide.active a, .slide.active ul { 
+.slide.active h1, .slide.active h3, .slide.active p, .slide.active a, .slide.active ul { 
 	opacity:1;
 }
 

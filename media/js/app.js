@@ -10,11 +10,15 @@ $(document).ready(function() {
         
         if (currentSlide === 'home') {
             $("#home-tab").fadeOut();
-            $(".popup-content").fadeOut();
         } else {
             $("#home-tab").fadeIn();
         }
     });
+    
+    $(document).on('impress:stepleave', function(e) {
+        $(".popup-content").fadeOut();
+        $(".popup-content").addClass("hider");    
+    });    
     
     $(".next-slide").on("click", function () { 
 	    imp.next();

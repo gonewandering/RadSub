@@ -3,7 +3,7 @@ import posts
 from django.http import HttpResponse, HttpRequest
 
 from django.shortcuts import render_to_response
-
+from django.template import RequestContext
 def home(request):
 	
 	response = posts.models.Post.objects.all();
@@ -18,7 +18,7 @@ def home(request):
 		"debug": debug
 	}
 			
-	return render_to_response('show.html', c)
+	return render_to_response('show.html', c, context_instance=RequestContext(request))
 
 
 def post(slug, request):

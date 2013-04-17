@@ -53,20 +53,20 @@ ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
 
 
 # These are the development settings
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-#         'NAME': 'radsub.db',                      # Or path to database file if using sqlite3.
-#         'USER': '',                      # Not used with sqlite3.
-#         'PASSWORD': '',                  # Not used with sqlite3.
-#         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-#         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
-#     }
-# }
-# 
-# STATIC_ROOT = 'http://localhost/personal/radsubapp/radsub/'
-# MEDIA_URL = 'http://localhost/personal/radsubapp/radsub/uploads/'
-# STATIC_URL = 'http://localhost/personal/radsubapp/radsub/'
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'radsub.db',                      # Or path to database file if using sqlite3.
+        'USER': '',                      # Not used with sqlite3.
+        'PASSWORD': '',                  # Not used with sqlite3.
+        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+    }
+}
+
+STATIC_ROOT = 'http://localhost/personal/radsubapp/radsub/'
+MEDIA_URL = 'http://localhost/personal/radsubapp/radsub/uploads/'
+STATIC_URL = 'http://localhost/personal/radsubapp/radsub/'
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name

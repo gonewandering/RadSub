@@ -64,16 +64,21 @@
 			{% if posts %}
 				{% for post in posts %}
 					<div id="{{ post.slug }}" class="step slide {{ debug }} {{ post.slug }}" {% if post.mod_set.all %}{% for attr in post.mod_set.all %} data-{{ attr.attribute }}="{{ attr.value }}"{% endfor %}{% endif %}>
-						{% if request.user.is_authenticated %}
-							<a class="popup-menu" href="/admin/posts/post/{{ post.id }}/">
-								<i class="icon-cog"></i>
-							</a> 
-						{% endif %}
+					
+					
+
 						{% if debug %}<h1 class='debug-slug'>{{ post.slug }}</h1>{% endif %}
 						{% if post.template = "top" %}
 							<div>
 								<h3 class="date">{{ post.publishDate|date:"M. jS" }}</h3>
-								<h1>{{ post.title }}</h1>
+									<h1>
+										{% if user.is_authenticated %}
+											<a class="edit" target="_blank" href="/admin/posts/post/{{ post.id }}">
+												<i class="icon-cog" style="color:white"></i>
+											</a>
+										{% endif %}
+										{{ post.title }}
+									</h1>
 								{{ post.content|safe }}
 							</div>
 							<div>{{ post.addon|safe }}</div>
@@ -81,7 +86,14 @@
 							<div class="row-fluid">
 								<div class="span{{ post.contentWidth }}">
 									<h3 class="date">{{ post.publishDate|date:"M. jS" }}</h3>
-									<h1>{{ post.title }}</h1>
+									<h1>
+										{% if user.is_authenticated %}
+											<a class="edit" target="_blank" href="/admin/posts/post/{{ post.id }}">
+												<i class="icon-cog" style="color:white"></i>
+											</a>
+										{% endif %}
+										{{ post.title }}
+									</h1>
 									{{ post.content|safe }}
 								</div>
 								<div class="span{{ post.contentWidth|diff:12 }}">{{ post.addon|safe }}</div>
@@ -92,14 +104,28 @@
 							</div>
 							<div>
 								<h3 class="date">{{ post.publishDate|date:"M. jS" }}</h3>
-								<h1>{{ post.title }}</h1>
+									<h1>
+										{% if user.is_authenticated %}
+											<a class="edit" target="_blank" href="/admin/posts/post/{{ post.id }}">
+												<i class="icon-cog" style="color:white"></i>
+											</a>
+										{% endif %}
+										{{ post.title }}
+									</h1>
 								{{ post.content|safe }}</div>
 						{% elif post.template = "right" %}
 							<div class="row-fluid">
 								<div class="span{{ post.contentWidth|diff:12 }}">{{ post.addon|safe }}</div>
 								<div class="span{{ post.contentWidth }}">
 									<h3 class="date">{{ post.publishDate|date:"M. jS" }}</h3>
-									<h1>{{ post.title }}</h1>
+									<h1>
+										{% if user.is_authenticated %}
+											<a class="edit" target="_blank" href="/admin/posts/post/{{ post.id }}">
+												<i class="icon-cog" style="color:white"></i>
+											</a>
+										{% endif %}
+										{{ post.title }}
+									</h1>
 									{{ post.content|safe }}
 								</div>
 							</div>
