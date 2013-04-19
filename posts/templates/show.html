@@ -44,7 +44,7 @@
 										<li>
 											<div class="row-fluid">
 												<div class="span12">
-													<div>{{ post.publishDate|date:"M. jS" }} :: <a href="#{{ post.slug }}">{{ post.title }}</a></div>
+													<div><span class="gray-date">{{ post.publishDate|date:"M. jS" }}</span> <a href="#{{ post.slug }}">{{ post.title }}</a></div>
 													<p class="excerpt">{{ post.excerpt }}</p>
 												</div>
 											</div>
@@ -143,7 +143,7 @@
 		    		</li>
 	            {% for post in posts %}
 	            	<li>
-	            		<a class="title {{ post.slug }}" href="#{{ post.slug }}"><span style="font-weight:300">{{ post.publishDate|date:"n/j" }}</span> : {{ post.title }}</a>
+	            		<a class="title {{ post.slug }}" href="#{{ post.slug }}"><span class="gray-date">{{ post.publishDate|date:"n/j" }}</span> {{ post.title }}</a>
 	            		<!-- <p>{{ post.excerpt }}</p> -->
 	            	</li>
 	            {% endfor %}
