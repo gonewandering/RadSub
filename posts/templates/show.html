@@ -3,10 +3,10 @@
 <!doctype html>
 <html>
 	<head>
-		<title>Blog Title</title>
+		<title>Lindsay.gs :: An energetic blog</title>
 		<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
 		<link href="//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
-		<link type="text/css" rel="stylesheet" href="{% static "media/css/app.min.css" %}" />
+		<link type="text/css" rel="stylesheet" href="{% static "css/app.min.css" %}" />
 	</head>
 	<body>
 		<div id="home-tab">
@@ -44,7 +44,7 @@
 										<li>
 											<div class="row-fluid">
 												<div class="span12">
-													<div><span class="gray-date">{{ post.publishDate|date:"M. jS" }}</span> <a href="#{{ post.slug }}">{{ post.title }}</a></div>
+													<div class="title"><span class="gray-date">{{ post.publishDate|date:"M. jS" }}</span> <a href="#{{ post.slug }}">{{ post.title }}</a></div>
 													<p class="excerpt">{{ post.excerpt }}</p>
 												</div>
 											</div>
@@ -155,7 +155,7 @@
 		
 		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 		<script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
-		<script src="{% static "media/js/impress.js" %}"></script>
-		<script type="text/javascript" src="{% static "media/js/app.min.js" %}"></script>
+		<script src="{% static "js/impress.js" %}"></script>
+		<script type="text/javascript" src="{% static "js/app.min.js" %}"></script>
 	</body>
 </html>

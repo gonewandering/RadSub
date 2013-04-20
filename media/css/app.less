@@ -17,17 +17,35 @@ body {
 	font-weight:300;
 }
 
-a { color: white; opacity: .6 }
+h1,h2,h3,h4,h5,h6 { 
+	margin-top:2em;
+	opacity: .4; 
+	font-weight:400;
+	font-size:40px;
+	line-height:50px;
+}
+
+
+a { 
+	color: white; 
+	opacity: .6 
+}
+
 a:hover { 
 	color: @blue; 
 	text-decoration: none; 
 }
 
-p { opacity: .9; }
+p { 
+	opacity: .9; 
+}
 
-.grey { opacity: 1; }
-
-.blue { color: #3399CC; }
+.gray-date { 
+	font-weight:bold;
+	color:@gray;
+	display:inline-block;
+	margin-right:4px;
+}
 
 #home-tab { 
 	position:fixed;
@@ -40,113 +58,56 @@ p { opacity: .9; }
 	text-shadow: 0 2px 2px rgba(0,0,0,.3);
 	z-index:5000;
 	opacity:1; 
-}
-
-#home-tab a { 
-	opacity:1;
-}
-
-h1,h2,h3,h4,h5,h6 { 
-	margin-top:2em;
-	opacity: .4; 
-	font-weight:400;
-	font-size:40px;
-	line-height:50px;
-}
-
-.slide h1 { 
-	margin:0;
-	font-weight:300;
-	margin-bottom:14px;
-}
-
-.slide h3.date { 
-	margin-top:2em;
-	font-size:20px;
-	font-weight:bold;
-	line-height:20px;
+	
+	a { 
+		opacity: 1;
+	}
 }
 
 .debug { 
 	border:solid 10px #CCC;
+	.debug-slug { 
+		position:absolute;
+		top:10px;
+		left:10px;
+		font-size:72px;
+		margin:0 !important;
+		padding:0 !important;
+		color:yellow;
+	}
 }
 
-.debug .debug-slug { 
-	position:absolute;
-	top:10px;
-	left:10px;
-	font-size:72px;
-	margin:0 !important;
-	padding:0 !important;
-	color:yellow;
-}
 
 #home h1 { 
 	margin-bottom:36px;
 }
 
-.post-menu { 
+.post-menu {  
 	list-style-type:none;
 	margin:0;
 	padding:0;
+	li { 
+		margin-bottom:20px;
+	}
+	a { 
+		color:white;
+		font-weight:bold;
+		-webkit-transition: opacity 1s ease;  
+	    -moz-transition: opacity 1s ease;  
+	    -o-transition: opacity 1s ease;  
+	    -ms-transition: opacity 1s ease;
+	}
+	a:hover { 
+		text-decoration:none;
+		opacity:.5;
+		color: #95c4fa;
+	}
+	.excerpt { 
+		margin-top:6px;
+		opacity:.5;		
+	}
 }
 
-.post-menu li { 
-	margin-bottom:20px;
-	font-size:1.2em;
-}
-
-.post-menu li .img { 
-	color:white;
-	text-align:right;
-}
-
-.post-menu li .img h1 { 
-	margin:0 !important;
-	padding:0;
-	text-align:center;
-	font-size:40px;
-	font-weight:bold;
-	line-height:50px;
-	opacity:.3;
-	background:black;
-	color:white;
-	border-radius:100px;
-	width:55px;
-	display:inline-block;
-}
-
-.post-menu a { 
-	color:white;
-	font-weight:bold;
-	-webkit-transition: opacity 1s ease;  
-    -moz-transition: opacity 1s ease;  
-    -o-transition: opacity 1s ease;  
-    -ms-transition: opacity 1s ease;
-}
-
-.post-menu .excerpt { 
-	margin-top:6px;
-	opacity:.5;
-}
-
-.post-menu a:hover { 
-	text-decoration:none;
-	opacity:.5;
-	color: #95c4fa;
-}
-
-.publish-date { 
-	color:white;
-	font-weight:300;
-	text-transform: uppercase;
-	font-weight:bold;
-	opacity:.6;
-}
-
-.publish-div { 
-	color:#006699;
-}
 
 .slide { 
 	width:1100px;
@@ -157,29 +118,38 @@ h1,h2,h3,h4,h5,h6 {
     -moz-transition: opacity 2s ease;  
     -o-transition: opacity 2s ease;  
     -ms-transition: opacity 2s ease;
-}
-
-.slide h3 { 
-	color:@gray;
+    
+    h3 { 
+	    color:@gray;
+		margin-top:2em;
+		font-size:20px;
+		font-weight:bold;
+		line-height:20px;
+    }
+    
+    h1, h3, h4, p, a, ul { 
+		opacity:0;
+		-webkit-transition: opacity 2s ease;  
+	    -moz-transition: opacity 2s ease;  
+	    -o-transition: opacity 2s ease;  
+	    -ms-transition: opacity 2s ease;	    
+    }
+    
+    h1 { 
+		margin:0;
+		font-weight:300;
+		margin-bottom:14px;
+    }
 }
 
 .slide.active { 
 	opacity:1;
+    h1, h3, h4, p, a, ul { 
+    	opacity:1;
+    }
 }
 
-.slide h1, .slide h3, .slide p, .slide a, .slide ul { 
-	opacity:0;
-	-webkit-transition: opacity 2s ease;  
-    -moz-transition: opacity 2s ease;  
-    -o-transition: opacity 2s ease;  
-    -ms-transition: opacity 2s ease;
-}
-
-.slide.active h1, .slide.active h3, .slide.active p, .slide.active a, .slide.active ul { 
-	opacity:1;
-}
-
-.debug.slide h1, .debug.slide p, .debug.slide a, .debug.slide ul { 
+.slide.debug { 
 	opacity: 1 !important;
 }
 
@@ -187,8 +157,6 @@ iframe {
 	border:none;
 	outline:none;
 }
-
-@transp: rgba(255,255,255,.1);
 
 .popup-content { 
 	position:absolute;
@@ -251,15 +219,4 @@ iframe {
 
 #home { 
 	padding-top:30px;
-}
-
-p.padtop { 
-	margin-top:50px;
-}
-
-.gray-date { 
-	font-weight:bold;
-	color:@gray;
-	display:inline-block;
-	margin-right:4px;
 }
