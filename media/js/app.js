@@ -4,6 +4,9 @@ $(document).ready(function() {
  	imp.init();
     $(document).on('impress:stepenter', function(e) {
         var currentSlide = $(e.target).attr('id');
+        
+        $(".twitter-button").attr("href", "http://twitter.com/share?text="+$("#"+currentSlide).find("h1").text()+"&url="+window.location);
+        $(".like-button").attr("href", "http://www.facebook.com/sharer.php?u="+window.location);
         $("*").removeClass("active-slide");
         
         $("."+currentSlide).addClass("active-slide");
@@ -26,6 +29,10 @@ $(document).ready(function() {
     
     $(".prev-slide").on("click", function () { 
 	   imp.prev(); 
+    });
+    
+    $(".like-button").on("click", function () { 
+	   	window.location = "http://twitter.com/share?text=An%20Awesome%20Link&url=" 
     });
 	
 	$(".popup-menu").on("click", function () {
