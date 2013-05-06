@@ -48,8 +48,8 @@ ADMIN_MEDIA_PREFIX = 'admin/'
 
 
 # Change Static Files and Media to S3
-# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-# STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
 
 # These are the development settings
