@@ -6,7 +6,7 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 def home(request):
 	
-	response = posts.models.Post.objects.all().order_by("date")[:6];
+	response = posts.models.Post.objects.all().order_by("publishDate")[:6];
 	
 	try:
 		debug = request.GET['debug']
