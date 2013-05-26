@@ -1,0 +1,21 @@
+body{padding:0;margin:0;}
+.blocks{padding:5px;overflow:hidden;}.blocks .column{width:25%;float:left;}.blocks .column .block{background:white;box-shadow:0 1px 3px rgba(0, 0, 0, 0.6);margin-bottom:5px;margin-right:5px;border-radius:2px;overflow:hidden;}.blocks .column .block h1,.blocks .column .block h2,.blocks .column .block h3,.blocks .column .block h4,.blocks .column .block h5,.blocks .column .block h6{margin:0;padding:0;color:#999;}
+.blocks .column .block .image{overflow:hidden;}.blocks .column .block .image img{max-width:100%;display:block;}
+.blocks .column .block .content{padding:20px;}.blocks .column .block .content h3{font-size:1.2em;margin-bottom:.3em;}
+.blocks .column .block .foot{background:-webkit-linear-gradient(#9a6b6b 0%, #868686 100%);font-size:14px;line-height:14px;padding:5px;text-align:center;font-weight:bold;color:white;}
+.blocks .column .block.title{color:rgba(255, 255, 255, 0.6);}.blocks .column .block.title h1,.blocks .column .block.title h2,.blocks .column .block.title h3,.blocks .column .block.title h4,.blocks .column .block.title h5,.blocks .column .block.title h6{color:#ffffff;}
+.blocks .column .block.title p{line-height:1.1em;margin:0;margin-top:10px;font-size:.9em;}
+.blocks .column .block.trans{background:transparent;color:white;border-radius:0;}.blocks .column .block.trans h1,.blocks .column .block.trans h2,.blocks .column .block.trans h3,.blocks .column .block.trans h4,.blocks .column .block.trans h5,.blocks .column .block.trans h6{color:#FFF;}
+.blocks .column .block.trans .content{padding:0;}
+.blocks .column .block.image .content{display:none;}
+.blocks .column .block.image .foot{display:none;}
+.blocks .column .block.link{background:transparent;color:white;border-radius:0;}.blocks .column .block.link .content{padding:0;}
+.blocks .column .block.link .image{display:none;}
+.blocks .column .block.link .excerpt{display:none;}
+.blocks .column .block.link .foot{display:none;}
+.blocks .column .block.link h3{font-size:2.5em;line-height:1.2em;margin:12px 0;font-weight:normal;}
+.column:last-child .block{margin-right:0;}
+.column .block:last-child{margin-bottom:0;}
+body{font-family:Helvetica;font-size:12px;line-height:1.6em;font-weight:300;background:#4c595e;}
+h1,h2,h3,h4,h5,h6{font-weight:bold;}
+a{text-decoration:none;}

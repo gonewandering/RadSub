@@ -1,0 +1,1 @@
+function getPopover(){return".menu-popover-content".html()}$(document).ready(function(){$(".popup-menu").popover({animation:!0,html:!0,content:getPopover(),title:"Lindsay.gs Posts"})});
